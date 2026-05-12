@@ -5,8 +5,8 @@ import joblib, os
 
 def add_features(df):
     df['day_of_week'] = df['date'].dt.dayofweek
-    weekend_days = [5, 6] # 5=Saturday, 6=Sunday
-    df['is_weekend'] = df['day_of_week'].isin(weekend_days).astype(int)
+    weekend_days_numbers = [5, 6] # 5=Saturday, 6=Sunday
+    df['is_weekend'] = df['day_of_week'].isin(weekend_days_numbers).astype(int)
     return df
 
 def prepare_features(df, target='sales_qty', test_size=0.2, random_state=42):
